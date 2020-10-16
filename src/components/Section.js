@@ -1,17 +1,27 @@
-import React from 'react'
+import React from 'react';
+import {
+    Switch,
+    Route,
+} from 'react-router-dom';
 
-function Section(props){
-    return(
+function Section(props) {
+    return (
         <section id="section" className="container">
-        <div className="row">
-        <div className="col-sm-1"></div>
-        <div className="col-sm-10">
-            <h1>Página {props.onPage}</h1>
-            <h5>xxxxx</h5>
-        </div>
-        <div className="col-sm-1"></div>
-        </div>
-    </section>
+            <Switch>
+                <Route exact path="/">
+                    test
+                </Route>
+                <Route exact path="/about">
+                    sobre
+                </Route>
+                <Route exact path="/products">
+                    produtos
+                </Route>
+                <Route exact path="/contact">
+                    contatos
+                </Route>
+            </Switch>
+        </section>
     )
 }
 

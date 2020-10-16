@@ -1,18 +1,21 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Section from './components/Section';
 import Footer from './components/Footer';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
-  const [page, setPage] = useState();
+
   return (
     <div>
-     <Header />
-     <Nav onSetPage={setPage} />
-     <Section onPage={page}/>
-     <Footer></Footer>
+      <Router>
+        <Header />
+        <Nav  />
+        <Section  />
+        <Footer></Footer>
+      </Router>
     </div>
   );
 }
