@@ -3,22 +3,26 @@ import {
     Switch,
     Route,
 } from 'react-router-dom';
+import Home from './pages/Home';
+import About from './pages/About';
+import Products from './pages/Products';
+import Contact from './pages/Contact';
 
 function Section(props) {
     return (
         <section id="section" className="container">
             <Switch>
                 <Route exact path="/">
-                    test
+                    <Home />
                 </Route>
                 <Route exact path="/about">
-                    sobre
+                    <About />
                 </Route>
-                <Route exact path="/products">
-                    produtos
+                <Route  path="/products">
+                    <Products />
                 </Route>
                 <Route exact path="/contact">
-                    contatos
+                    <Contact />
                 </Route>
             </Switch>
         </section>

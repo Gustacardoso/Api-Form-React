@@ -12,7 +12,7 @@ function Nav() {
                     <Link className="nav-link" to="/about">sobre</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/products">Produtos</Link>
+                    <Link className="nav-link" to="/products">Produtos e serviços</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to="/contact">Contato</Link>

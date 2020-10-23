@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Home(){
+function About(){
     return(
         <div className="row">
          <div className="col-md-1"></div>
          <div className="col-md-10">
-             <h1>Pagina Home</h1>
+             <h1>Pagina Sobre</h1>
              <p>Aqui vai meu   Texto ...</p>
          </div>
          <div className="col-md-1"></div>
@@ -13,4 +13,4 @@ function Home(){
     )
 }
 
-export default Home;
+export default About;
