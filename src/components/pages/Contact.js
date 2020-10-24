@@ -2,18 +2,26 @@ import React from 'react';
 import { useForm} from 'react-hook-form';
 import {ErrorMessage} from '@hookform/error-message';
 import Api  from '../../Api';
+import {useHistory} from 'react-router-dom';
 function Contact() {
 
     const {handleSubmit, register, errors} = useForm();
+    const history = useHistory();
     const onSubmit = data =>{
       console.log(data);
-      Api.post(
-
-      ).then(function(response){
+      Api.post('/contacts',{
+          name : data.name,
+          email : data.email,
+          message : data.message
+      }).then(function(response){
           console.log(response);
       })
       .catch(function(erros){
           console.log(erros);
+      })
+      .finally(function(){
+          history.push('/contacts/view');
+          // executar algo depois de inserido no banco
       })
     }
     return (
