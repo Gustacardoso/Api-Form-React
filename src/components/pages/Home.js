@@ -1,12 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
+import Api from '../../Api';
 
 function Home(){
+    const[page, setPage] = useState([]);
+
+    useEffect  (()=>{
+        Api.get('/pages/1')
+        .then((Response)=>{
+            setPage(Response.data);
+        })
+},[]);
+
     return(
         <div className="row">
          <div className="col-md-1"></div>
-         <div className="col-md-10">
-             <h1>Pagina Home</h1>
-             <p>Aqui vai meu   Texto ...</p>
+         <div className="col-md-10"
+            dangerouslySetInnerHTML={
+                {
+                    __html : page.content
+                }
+            }
+            >
+            
          </div>
          <div className="col-md-1"></div>
         </div>

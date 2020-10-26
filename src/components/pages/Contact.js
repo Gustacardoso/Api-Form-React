@@ -20,7 +20,7 @@ function Contact() {
           console.log(erros);
       })
       .finally(function(){
-          history.push('/contacts/view');
+          history.push('/contactsview');
           // executar algo depois de inserido no banco
       })
     }
@@ -52,7 +52,8 @@ function Contact() {
                         <label>Mensagem:</label>
                         <textarea ref={register({
                             required:"Required"
-                        })}  className="form-control"
+                        })}  
+                        className="form-control"
                               type="text"
                               name="message">
                               <ErrorMessage errors={errors} name="message" />      

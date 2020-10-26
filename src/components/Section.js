@@ -7,7 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
-import ContactsView from './pages/contactsView';
+import ContactsView from './pages/ContactsView';
 
 function Section(props) {
     return (
@@ -25,7 +25,7 @@ function Section(props) {
                 <Route exact path="/contact">
                     <Contact />
                 </Route>
-                <Route exact path="/contacts/view">
+                <Route  path="/contactsview">
                       <ContactsView />
                 </Route>
             </Switch>
