@@ -8,6 +8,8 @@ import About from './pages/About';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 import ContactsView from './pages/ContactsView';
+import Login from './admin/login';
+import AdminHome from './admin/Home';
 
 function Section(props) {
     return (
@@ -27,6 +29,12 @@ function Section(props) {
                 </Route>
                 <Route  path="/contactsview">
                       <ContactsView />
+                </Route>
+                <Route  path="/users/login">
+                      <Login />
+                </Route>
+                <Route  path="/admin/home">
+                      <AdminHome />
                 </Route>
             </Switch>
         </section>
