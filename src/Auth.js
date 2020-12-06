@@ -1,8 +1,19 @@
+import * as jwt  from 'jsonwebtoken';
+
 
 export function isAdmin(){
+
+    const checkjwt = (token) => {
+        const strToken = jwt.decode(token);
+        if (strToken.admin === '1'){
+            return true;
+        }else{
+            return false;
+        }
+    }
     return (
         (getToken() != null) ?
-        true
+          checkjwt(getToken())
         : 
         false
     )

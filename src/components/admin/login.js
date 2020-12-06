@@ -17,8 +17,9 @@ function Login(){
               pass: data.password
           })
           .then(function(response){
-              console.log(response.data.token);
-              setToken(response.data.token);
+              if(response.data.acess === 'true'){
+              setToken(response.data.token); // se o meu  cara é true, ai vamos cetar 
+              }
           })
           .finally(function(){
               history.push('/admin/home');
@@ -34,17 +35,11 @@ function Login(){
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
                     <label> Usuario</label>
-                    <input type="text" 
-                    className="form-control"
-                    name="user"
-                    ref={
-                        register({
-                            required:"Required"
-                        })
-                    }></input>
+                    <input type="text" className="form-control" name="user"
+                    ref={register({required:"Required"}) }></input>
                     <ErrorMessage errors={errors} name="user" />
                      <label> Senha</label>
-                    <input type="text" 
+                    <input type="password" 
                     className="form-control"
                     name="password"
                     ref={

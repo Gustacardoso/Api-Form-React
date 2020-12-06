@@ -26,18 +26,25 @@ function Nav() {
                 <li className="nav-item">
                     <Link className="nav-link" to="/contact">Contato</Link>
                 </li>
-                <li className="nav-item">
-                    <Link className="nav-link" to="/contactsView">Lista de Contatos</Link>
-                </li>
+               
             </ul>
             <ul className="navbar-nav ml-auto">
                 {
                     isAdmin() ? //retorno para coisa verdadeiras
-                      <li className = "nav-item">
-                          <Link  onClick={logout} className="nav-link">
+                    <>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/admin/clients/view">Lista de Clientes</Link>
+                        </li>
+
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/admin/contacts/view">Lista de Contatos</Link>
+                        </li>
+                        <li className = "nav-item">
+                            <Link  onClick={logout} className="nav-link">
                               Logout
                           </Link>
                           </li>   
+                          </>
                     : 
                      <li className = "nav-item">
                         <Link className="nav-link" to="/users/login">Login</Link>
