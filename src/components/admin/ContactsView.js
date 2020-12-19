@@ -35,16 +35,22 @@ function ContactsView() {
     }
 
     const handleClickDelete = (id) =>{
-        Api.delete(`/contacts/${id}`,{},
+        Api.post(`/contacts/delete/${id}`,{},
         {
             
             headers:{
                 Authorization: 'Bearer ' + getToken()
             }
-        }).then((response)=>{
-            setContacts(response.data)
-            history.push('/admin/contacts/view')
-        })
+        }).then(function(response){
+            console.log(response.data);
+  
+         })
+         .catch((error)=>{
+             console.log(error);
+         })
+         .finally(()=>{
+             window.location.reload(true);
+         })
 }
     return (
         <div className="row">

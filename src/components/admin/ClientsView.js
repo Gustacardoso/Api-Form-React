@@ -35,13 +35,19 @@ function ClientsView(){
    }
 
    const handleDeleteButton = (id) => {
-       Api.post(`/clients/delete/${id}`, {},{
+       Api.delete(`/clients/delete/${id}`, {},{
            headers:{
                Authorization:'Bearer '+ getToken()
            }
        }).then(function(response){
           console.log(response.data);
-          window.location.reload();
+
+       })
+       .catch((error)=>{
+           console.log(error);
+       })
+       .finally(()=>{
+           window.location.reload(true);
        })
    }
 
@@ -65,8 +71,8 @@ function ClientsView(){
                         </tr>
                     </thead>
                     <tbody>
-                        {Clients.map((client) =>
-                            <tr key={client.idClient}>
+                        {Clients.map((client, index) =>
+                            <tr key={index}>
                                 <td>{client.idclient}</td>
                                 <td>{client.name}</td>
                                 <td>{client.phone}</td>

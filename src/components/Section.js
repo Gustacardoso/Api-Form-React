@@ -46,6 +46,7 @@ function Section(props) {
                 <PrivateRoute path ="/admin/contacts/response/:id" component={ContatcResponse}/>
 
                 <PrivateRoute exact path="/admin/clients/view" component={ClientsView}/>
+                
                 <PrivateRoute exact path="/admin/clients/add" component={ClientsAdd}/>
 
                 

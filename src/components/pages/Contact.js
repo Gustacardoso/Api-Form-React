@@ -20,7 +20,7 @@ function Contact() {
           console.log(erros);
       })
       .finally(function(){
-          history.push('/contactsview');
+          history.push('/contacts/view');
           // executar algo depois de inserido no banco
       })
     }
